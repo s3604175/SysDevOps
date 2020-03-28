@@ -13,4 +13,4 @@ jobs:
 workflows:
   build-and-package:
     jobs:
-      -build
+      - build
