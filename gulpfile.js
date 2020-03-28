@@ -1,7 +1,6 @@
 // generated on 2020-03-18 using generator-webapp 4.0.0-8
 const { src, dest, watch, series, parallel, lastRun } = require('gulp');
 const gulpLoadPlugins = require('gulp-load-plugins');
-const gulp = require('gulp');
 const fs = require('fs');
 const mkdirp = require('mkdirp');
 const Modernizr = require('modernizr');
@@ -14,7 +13,7 @@ const { argv } = require('yargs');
 const $ = gulpLoadPlugins();
 const server = browserSync.create();
 
-const port = argv.port || 3000;
+const port = argv.port || 9000;
 
 const isProd = process.env.NODE_ENV === 'production';
 const isTest = process.env.NODE_ENV === 'test';
