@@ -1,10 +1,11 @@
 // generated on 2020-03-18 using generator-webapp 4.0.0-8
 const { src, dest, watch, series, parallel, lastRun } = require('gulp');
 const gulpLoadPlugins = require('gulp-load-plugins');
+const gulp = require('gulp');
 const fs = require('fs');
 const mkdirp = require('mkdirp');
 const Modernizr = require('modernizr');
-const browserSync = require('browser-sync');
+const browserSync = require('browser-sync').create();
 const del = require('del');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
@@ -37,6 +38,14 @@ function styles() {
     }))
     .pipe(server.reload({stream: true}));
 };
+
+gulp.task('browser-sync', function() {
+  browserSync.init({
+    server: {
+      baseDir: "./"
+    }
+  })
+});
 
 function scripts() {
   return src('app/scripts/**/*.js', {
