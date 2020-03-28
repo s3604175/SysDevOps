@@ -23,8 +23,8 @@ jobs:
           command: |
             yarn --frozen-lockfile
       - run:
-        name: compiles
-        command: |
+          name: compiles
+          command: |
           yarn build
 
 workflows:
