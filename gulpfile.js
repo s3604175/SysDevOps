@@ -14,7 +14,7 @@ const { argv } = require('yargs');
 const $ = gulpLoadPlugins();
 const server = browserSync.create();
 
-const port = argv.port || 9000;
+const port = argv.port || 3000;
 
 const isProd = process.env.NODE_ENV === 'production';
 const isTest = process.env.NODE_ENV === 'test';
@@ -38,14 +38,6 @@ function styles() {
     }))
     .pipe(server.reload({stream: true}));
 };
-
-gulp.task('browser-sync', function() {
-  browserSync.init({
-    server: {
-      baseDir: "./"
-    }
-  })
-});
 
 function scripts() {
   return src('app/scripts/**/*.js', {
