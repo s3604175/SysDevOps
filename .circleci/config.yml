@@ -31,6 +31,6 @@ workflows:
   build-and-package:
     jobs:
       - build
-      - pack
+      - pack:
         requires:
           - build
